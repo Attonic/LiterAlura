@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class Livro {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String titulo;
@@ -30,7 +30,7 @@ public class Livro {
     private Autor autor;
 
     public Livro(DadosLivro dadosLivro){
-        this.titulo = dadosLivro.titilo();
+        this.titulo = dadosLivro.titulo();
         this.numeroDownloads = dadosLivro.numeroDownloads();
 
         if (dadosLivro.idiomas() != null && !dadosLivro.idiomas().isEmpty()){

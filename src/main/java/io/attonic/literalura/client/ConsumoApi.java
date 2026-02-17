@@ -14,13 +14,13 @@ public class ConsumoApi {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
                 .build();
-        HttpResponse<String> response;
+        HttpResponse<String> response = null;
         try {
             response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            return response.body();
         } catch (IOException | InterruptedException e){
             throw new RuntimeException("Erro ao buscar dados da API" + e.getMessage());
         }
+        return response.body();
     }
 
 }
