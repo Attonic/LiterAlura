@@ -12,7 +12,7 @@ public record DadosAutor(
         Integer anoNascimento,
 
         @JsonAlias("death_year")
-        Integer anoFalecimento
+        Integer anoFalescimento
 
 ) {
 }
